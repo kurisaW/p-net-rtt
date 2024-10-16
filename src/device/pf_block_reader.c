@@ -106,13 +106,22 @@ uint16_t pf_get_uint16 (pf_get_info_t * p_info, uint16_t * p_pos)
    }
    else if (p_info->is_big_endian)
    {
-      res = ((uint16_t)pf_get_byte (p_info, p_pos) << 8) +
-            (uint16_t)pf_get_byte (p_info, p_pos);
+//       res = ((uint16_t)pf_get_byte (p_info, p_pos) << 8) +
+//             (uint16_t)pf_get_byte (p_info, p_pos);
+
+       // 上面代码会导致bug
+       res = (uint16_t)pf_get_byte (p_info, p_pos) << 8;
+       res += (uint16_t)pf_get_byte (p_info, p_pos);
+
    }
    else
    {
-      res = (uint16_t)pf_get_byte (p_info, p_pos) +
-            ((uint16_t)pf_get_byte (p_info, p_pos) << 8);
+//       res = (uint16_t)pf_get_byte (p_info, p_pos) +
+//             ((uint16_t)pf_get_byte (p_info, p_pos) << 8);
+
+       // 上面代码会导致bug
+       res = (uint16_t)pf_get_byte (p_info, p_pos);
+       res += ((uint16_t)pf_get_byte (p_info, p_pos) << 8);
    }
 
    return res;
@@ -128,6 +137,11 @@ uint32_t pf_get_uint32 (pf_get_info_t * p_info, uint16_t * p_pos)
             ((uint32_t)pf_get_byte (p_info, p_pos) << 16) +
             ((uint32_t)pf_get_byte (p_info, p_pos) << 8) +
             (uint32_t)pf_get_byte (p_info, p_pos);
+
+//      res =  ((uint32_t)pf_get_byte (p_info, p_pos) << 24);
+//      res += ((uint32_t)pf_get_byte (p_info, p_pos) << 16);
+//      res += ((uint32_t)pf_get_byte (p_info, p_pos) << 8);
+//      res += (uint32_t)pf_get_byte (p_info, p_pos);
    }
    else
    {
@@ -135,6 +149,11 @@ uint32_t pf_get_uint32 (pf_get_info_t * p_info, uint16_t * p_pos)
             ((uint32_t)pf_get_byte (p_info, p_pos) << 8) +
             ((uint32_t)pf_get_byte (p_info, p_pos) << 16) +
             ((uint32_t)pf_get_byte (p_info, p_pos) << 24);
+
+//      res = (uint32_t)pf_get_byte (p_info, p_pos);
+//      res += ((uint32_t)pf_get_byte (p_info, p_pos) << 8);
+//      res += ((uint32_t)pf_get_byte (p_info, p_pos) << 16);
+//      res += ((uint32_t)pf_get_byte (p_info, p_pos) << 24);
    }
 
    return res;

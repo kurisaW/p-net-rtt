@@ -319,5 +319,5 @@ void pf_file_clear (const char * directory, const char * filename)
       return;
    }
 
-   return pnal_clear_file (path);
+   pnal_clear_file (path);
 }

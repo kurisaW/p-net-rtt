@@ -1,0 +1,1802 @@
+﻿<HTML xmlns:dt="http://www.w3.org/2001/XMLSchema-instance" xmlns:d2="urn:schemas-microsoft-com:datatypes">
+  <HEAD>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <STYLE>
+          
+    body {font-family:Courier New;font-size:10pt;margin-right:1.5em;background:AliceBlue}
+    .c{ }
+    .m{color:#505050}                   /* markup */
+    .b{color:red;font-weight:bold;text-decoration:none}  /* non breaking space */
+    .e{margin-left:1em;text-indent:-1em;margin-right:1em}  /* expandable */
+    .k{margin-left:1em;text-indent:-1em;margin-right:1em}  /* outer comment (non-expandable)? */
+    .at{color:Maroon}          /* attribute name */
+    .av {color:Black;}       /* attribute value */
+    .t {color:#004080}                 /* element name */
+    .tx{color:Black}   /* text content */
+    .pi{color:Purple}                      /* pi name and content */
+    .ci{color:Green}                 /* comment value */    
+    .side{background-color:#FFFACD}   /* intro div */    
+    .outputtip { display:block }
+    a { color:#004080 }
+    a:visited { color:Purple }
+    a:hover { color:Purple }
+    pre {margin:0px;display:inline}
+        </STYLE>
+  </HEAD>
+  <BODY class="st">
+    <div style="padding:5px;" class="side tx">
+          
+            Your XML document contains no xml-stylesheet processing instruction. To provide
+            an <a href="https://www.tutorialspoint.com/xslt/index.htm" target="_new">XSLT transform</a>, add the following to the top of your file and edit the href
+            attribute accordingly:
+
+            <pre><span class="m">&lt;?</span><span class="pi">xml-stylesheet</span> <span class="at">type</span><span class="m">="</span><span class="av">text/xsl</span><span class="m">" </span><span class="at">href</span><span class="m">="</span><span class="av">stylesheet.xsl</span><span class="m">" ?&gt;</span></pre>
+      <p>
+            You can also enter the XSLT file name using the above "XSLT Location:" text box, but this will not
+            persist with your XML document.
+          </p>
+      <div class="outputtip">
+            You can specify a default output file name using the following in your XML documents:
+            <pre><span class="m">&lt;?</span><span class="pi">xsl-output</span> <span class="at">default</span><span class="m">="</span><span class="av">xslt_output</span><span class="m">" ?&gt;</span></pre>
+      </div>
+    </div>
+    <div class="e">
+      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ISO15745Profile</span> 
+    <span class="at">xsi:schemaLocation</span><span class="m">="</span><span class="av">http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.4.xsd</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+      <div>
+        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre> ProfileHeader definition as defined in ISO 15745-1. Please do not change the content. </pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+        <div class="e">
+          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ProfileHeader</span><span class="m">&gt;</span></div>
+          <div>
+            <div class="e">
+              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileIdentification</span><span class="m">&gt;</span><span class="tx">PROFINET Device Profile</span><span class="m">&lt;/</span><span class="t">ProfileIdentification</span><span class="m">&gt;</span></div>
+            </div>
+            <div class="e">
+              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileRevision</span><span class="m">&gt;</span><span class="tx">1.00</span><span class="m">&lt;/</span><span class="t">ProfileRevision</span><span class="m">&gt;</span></div>
+            </div>
+            <div class="e">
+              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileName</span><span class="m">&gt;</span><span class="tx">Device Profile for PROFINET Devices</span><span class="m">&lt;/</span><span class="t">ProfileName</span><span class="m">&gt;</span></div>
+            </div>
+            <div class="e">
+              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileSource</span><span class="m">&gt;</span><span class="tx">PROFIBUS Nutzerorganisation e. V. (PNO)</span><span class="m">&lt;/</span><span class="t">ProfileSource</span><span class="m">&gt;</span></div>
+            </div>
+            <div class="e">
+              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileClassID</span><span class="m">&gt;</span><span class="tx">Device</span><span class="m">&lt;/</span><span class="t">ProfileClassID</span><span class="m">&gt;</span></div>
+            </div>
+            <div class="e">
+              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ISO15745Reference</span><span class="m">&gt;</span></div>
+              <div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ISO15745Part</span><span class="m">&gt;</span><span class="tx">4</span><span class="m">&lt;/</span><span class="t">ISO15745Part</span><span class="m">&gt;</span></div>
+                </div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ISO15745Edition</span><span class="m">&gt;</span><span class="tx">1</span><span class="m">&lt;/</span><span class="t">ISO15745Edition</span><span class="m">&gt;</span></div>
+                </div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ProfileTechnology</span><span class="m">&gt;</span><span class="tx">GSDML</span><span class="m">&lt;/</span><span class="t">ProfileTechnology</span><span class="m">&gt;</span></div>
+                </div>
+                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ISO15745Reference</span><span class="m">&gt;</span></div>
+              </div>
+            </div>
+            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ProfileHeader</span><span class="m">&gt;</span></div>
+          </div>
+        </div>
+        <div class="e">
+          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ProfileBody</span><span class="m">&gt;</span></div>
+          <div>
+            <div class="e">
+              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DeviceIdentity</span> 
+    <span class="at">VendorID</span><span class="m">="</span><span class="av">0x0493</span><span class="m">"</span>
+   
+    <span class="at">DeviceID</span><span class="m">="</span><span class="av">0x0002</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+              <div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INFO_Device</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                </div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">VendorName</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">RT-Labs</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                </div>
+                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DeviceIdentity</span><span class="m">&gt;</span></div>
+              </div>
+            </div>
+            <div class="e">
+              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DeviceFunction</span><span class="m">&gt;</span></div>
+              <div>
+                <div class="e">
+                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Family</span> 
+    <span class="at">MainFamily</span><span class="m">="</span><span class="av">I/O</span><span class="m">"</span>
+   
+    <span class="at">ProductFamily</span><span class="m">="</span><span class="av">P-Net Samples</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                </div>
+                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DeviceFunction</span><span class="m">&gt;</span></div>
+              </div>
+            </div>
+            <div class="e">
+              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ApplicationProcess</span><span class="m">&gt;</span></div>
+              <div>
+                <div class="e">
+                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DeviceAccessPointList</span><span class="m">&gt;</span></div>
+                  <div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DeviceAccessPointItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDD_1</span><span class="m">"</span>
+   
+    <span class="at">PNIO_Version</span><span class="m">="</span><span class="av">V2.4</span><span class="m">"</span>
+   
+    <span class="at">PhysicalSlots</span><span class="m">="</span><span class="av">0..6</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000001</span><span class="m">"</span>
+   
+    <span class="at">MinDeviceInterval</span><span class="m">="</span><span class="av">32</span><span class="m">"</span>
+   
+    <span class="at">DNS_CompatibleName</span><span class="m">="</span><span class="av">rt-pn</span><span class="m">"</span>
+   
+    <span class="at">FixedInSlots</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">ObjectUUID_LocalIndex</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">DeviceAccessSupported</span><span class="m">="</span><span class="av">false</span><span class="m">"</span>
+   
+    <span class="at">MultipleWriteSupported</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">CheckDeviceID_Allowed</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">NameOfStationNotTransferable</span><span class="m">="</span><span class="av">false</span><span class="m">"</span>
+   
+    <span class="at">LLDP_NoD_Supported</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">ResetToFactoryModes</span><span class="m">="</span><span class="av">1..2</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+Replace the tag above with the one below to support shared device.
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+            &lt;DeviceAccessPointItem ID="IDD_1" PNIO_Version="V2.4" PhysicalSlots="0..4" ModuleIdentNumber="0x00000001" MinDeviceInterval="32" DNS_CompatibleName="rt-pn" FixedInSlots="0" ObjectUUID_LocalIndex="1" DeviceAccessSupported="false" MultipleWriteSupported="true" SharedDeviceSupported="true" CheckDeviceID_Allowed="true" NameOfStationNotTransferable="false" LLDP_NoD_Supported="true" ResetToFactoryModes="1..2"&gt;
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_DAP1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INFO_DAP1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">VendorName</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">RT-Labs</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">OrderNumber</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">12345 Abcdefghijk</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">A1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">V0.1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">CertificationInfo</span> 
+    <span class="at">ConformanceClass</span><span class="m">="</span><span class="av">B</span><span class="m">"</span>
+   
+    <span class="at">ApplicationClass</span><span class="m">="</span><span class="av"></span><span class="m">"</span>
+   
+    <span class="at">NetloadClass</span><span class="m">="</span><span class="av">I</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">IOConfigData</span> 
+    <span class="at">MaxInputLength</span><span class="m">="</span><span class="av">244</span><span class="m">"</span>
+   
+    <span class="at">MaxOutputLength</span><span class="m">="</span><span class="av">244</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">UseableModules</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_30</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_31</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_32</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_40</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_41</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">ModuleItemRef</span> 
+    <span class="at">ModuleItemTarget</span><span class="m">="</span><span class="av">IDM_42</span><span class="m">"</span>
+   
+    <span class="at">AllowedInSlots</span><span class="m">="</span><span class="av">1..6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">UseableModules</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDS_1</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x00000001</span><span class="m">"</span>
+   
+    <span class="at">Writeable_IM_Records</span><span class="m">="</span><span class="av">1 2 3</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">false</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">IOData</span><span class="m">/&gt;</span></div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_DAP1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INFO_DAP1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">SystemDefinedSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">InterfaceSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDS_I</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x00008000</span><span class="m">"</span>
+   
+    <span class="at">SubslotNumber</span><span class="m">="</span><span class="av">32768</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_NAME_IS</span><span class="m">"</span>
+   
+    <span class="at">SupportedRT_Classes</span><span class="m">="</span><span class="av">RT_CLASS_1</span><span class="m">"</span>
+   
+    <span class="at">SupportedProtocols</span><span class="m">="</span><span class="av">SNMP;LLDP</span><span class="m">"</span>
+   
+    <span class="at">NetworkComponentDiagnosisSupported</span><span class="m">="</span><span class="av">false</span><span class="m">"</span>
+   
+    <span class="at">PTP_BoundarySupported</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">DCP_BoundarySupported</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+If shared device is supported, add a "NumberOfAR" attribute to the following ApplicationRelations element.
+The number should match the p-net configuration variable PNET_MAX_AR.
+Example, for PNET_MAX_AR = 3:
+                     &lt;ApplicationRelations StartupMode="Advanced" NumberOfAR="3"&gt;
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ApplicationRelations</span> 
+    <span class="at">StartupMode</span><span class="m">="</span><span class="av">Advanced</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">TimingProperties</span> 
+    <span class="at">SendClock</span><span class="m">="</span><span class="av">32</span><span class="m">"</span>
+   
+    <span class="at">ReductionRatio</span><span class="m">="</span><span class="av">1 2 4 8 16 32 64 128 256 512</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ApplicationRelations</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">InterfaceSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">PortSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDS_P1</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x00008001</span><span class="m">"</span>
+   
+    <span class="at">SubslotNumber</span><span class="m">="</span><span class="av">32769</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_NAME_PS1</span><span class="m">"</span>
+   
+    <span class="at">MaxPortRxDelay</span><span class="m">="</span><span class="av">350</span><span class="m">"</span>
+   
+    <span class="at">MaxPortTxDelay</span><span class="m">="</span><span class="av">160</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">MAUTypeList</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+MAUTypeItems shall match the actual network interfaces of the device.
+Current list works for Raspberry Pi, Linksys usb/ethernet dongle and xmc sample targets
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">MAUTypeItem</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">30</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">MAUTypeItem</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">16</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">MAUTypeItem</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">MAUTypeList</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">PortSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+Enable to support additional port. (PNET_MAX_PHYSICAL_PORTS == 2)
+Add additional PortSubmoduleItems to support additional ports
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                            <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>
+                  &lt;PortSubmoduleItem ID="IDS_P2" SubmoduleIdentNumber="0x00008002" SubslotNumber="32770" TextId="IDT_NAME_PS2" MaxPortRxDelay="350" MaxPortTxDelay="160"&gt;
+                     &lt;MAUTypeList&gt;
+                        &lt;MAUTypeItem Value="30"/&gt;
+                        &lt;MAUTypeItem Value="16"/&gt;
+                        &lt;MAUTypeItem Value="5"/&gt;
+                     &lt;/MAUTypeList&gt;
+                  &lt;/PortSubmoduleItem&gt;
+</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">SystemDefinedSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Graphics</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">GraphicItemRef</span> 
+    <span class="at">Type</span><span class="m">="</span><span class="av">DeviceSymbol</span><span class="m">"</span>
+   
+    <span class="at">GraphicItemTarget</span><span class="m">="</span><span class="av">RT-LabsStackImage</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Graphics</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DeviceAccessPointItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DeviceAccessPointList</span><span class="m">&gt;</span></div>
+                  </div>
+                </div>
+                <div class="e">
+                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleList</span><span class="m">&gt;</span></div>
+                  <div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_30</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000030</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_130</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0130</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Input</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned8</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_8</span><span class="m">"</span>
+   
+    <span class="at">UseAsBits</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                          <div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">3</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">5</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">6</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">7</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DataItem</span><span class="m">&gt;</span></div>
+                                          </div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Input</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_31</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000031</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_131</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0131</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Output</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned8</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_8</span><span class="m">"</span>
+   
+    <span class="at">UseAsBits</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                          <div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">3</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">5</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">6</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">7</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DataItem</span><span class="m">&gt;</span></div>
+                                          </div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Output</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_32</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000032</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_132</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0132</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Input</span><span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned8</span><span class="m">"</span>
+   
+    <span class="at">UseAsBits</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_8</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                          <div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">3</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">5</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">6</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">7</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DataItem</span><span class="m">&gt;</span></div>
+                                          </div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Input</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Output</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned8</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_8</span><span class="m">"</span>
+   
+    <span class="at">UseAsBits</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                          <div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">3</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">5</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">6</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div class="e">
+                                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">BitDataItem</span> 
+    <span class="at">BitOffset</span><span class="m">="</span><span class="av">7</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                            </div>
+                                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">DataItem</span><span class="m">&gt;</span></div>
+                                          </div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Output</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">RecordDataList</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ParameterRecordDataItem</span> 
+    <span class="at">Index</span><span class="m">="</span><span class="av">123</span><span class="m">"</span>
+   
+    <span class="at">Length</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Ref</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">ByteOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">DefaultValue</span><span class="m">="</span><span class="av">1</span><span class="m">"</span>
+   
+    <span class="at">AllowedValues</span><span class="m">="</span><span class="av">0..99</span><span class="m">"</span>
+   
+    <span class="at">Changeable</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">Visible</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Demo_1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ParameterRecordDataItem</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ParameterRecordDataItem</span> 
+    <span class="at">Index</span><span class="m">="</span><span class="av">124</span><span class="m">"</span>
+   
+    <span class="at">Length</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Ref</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">ByteOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">DefaultValue</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">AllowedValues</span><span class="m">="</span><span class="av">0..999</span><span class="m">"</span>
+   
+    <span class="at">Changeable</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">Visible</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Demo_2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ParameterRecordDataItem</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">RecordDataList</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8O8</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_40</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000040</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_Echo</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_Echo</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_140</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0140</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Input</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Float32</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Echo_Float32</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Echo_Unsigned32</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Input</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Output</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Float32</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Echo_Float32</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Echo_Unsigned32</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Output</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">RecordDataList</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ParameterRecordDataItem</span> 
+    <span class="at">Index</span><span class="m">="</span><span class="av">125</span><span class="m">"</span>
+   
+    <span class="at">Length</span><span class="m">="</span><span class="av">4</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_Echo</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Ref</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">ByteOffset</span><span class="m">="</span><span class="av">0</span><span class="m">"</span>
+   
+    <span class="at">DefaultValue</span><span class="m">="</span><span class="av">2</span><span class="m">"</span>
+   
+    <span class="at">AllowedValues</span><span class="m">="</span><span class="av">1..4</span><span class="m">"</span>
+   
+    <span class="at">Changeable</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">Visible</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Echo_Gain</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ParameterRecordDataItem</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">RecordDataList</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_Echo</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_Echo</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_41</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000041</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_INPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_INPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_141</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0141</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Input</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">OctetString</span><span class="m">"</span>
+   
+    <span class="at">Length</span><span class="m">="</span><span class="av">20</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INPUT</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Input</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_INPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_INPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDM_42</span><span class="m">"</span>
+   
+    <span class="at">ModuleIdentNumber</span><span class="m">="</span><span class="av">0x00000042</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_OUTPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_OUTPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">HardwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">SoftwareRelease</span> 
+    <span class="at">Value</span><span class="m">="</span><span class="av">1.0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">VirtualSubmoduleItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">IDSM_142</span><span class="m">"</span>
+   
+    <span class="at">SubmoduleIdentNumber</span><span class="m">="</span><span class="av">0x0142</span><span class="m">"</span>
+   
+    <span class="at">MayIssueProcessAlarm</span><span class="m">="</span><span class="av">true</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                              <div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">Output</span> 
+    <span class="at">Consistency</span><span class="m">="</span><span class="av">All items consistency</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                                      <div>
+                                        <div class="e">
+                                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">DataItem</span> 
+    <span class="at">DataType</span><span class="m">="</span><span class="av">OctetString</span><span class="m">"</span>
+   
+    <span class="at">Length</span><span class="m">="</span><span class="av">20</span><span class="m">"</span>
+   
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_OUTPUT</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                        </div>
+                                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">Output</span><span class="m">&gt;</span></div>
+                                      </div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">IOData</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div class="e">
+                                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  <div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_OUTPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div class="e">
+                                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">InfoText</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_OUTPUT1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                                    </div>
+                                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleInfo</span><span class="m">&gt;</span></div>
+                                  </div>
+                                </div>
+                                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleItem</span><span class="m">&gt;</span></div>
+                              </div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">VirtualSubmoduleList</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ModuleList</span><span class="m">&gt;</span></div>
+                  </div>
+                </div>
+                <div class="e">
+                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">LogBookEntryList</span><span class="m">&gt;</span></div>
+                  <div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">LogBookEntryItem</span> 
+    <span class="at">Status</span><span class="m">="</span><span class="av">2130510</span><span class="m">"</span>
+  <span class="m">&gt;</span></div>
+                      <div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>Custom log book entry for sample application</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>Error code 0x20  Error decode 0x82  Error code 1 0x4E</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ErrorCode2Value</span><span class="m">&gt;</span></div>
+                          <div>
+                            <div class="e">
+                              <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Name</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_CUSTOM_LOGBOOK_1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                            </div>
+                            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ErrorCode2Value</span><span class="m">&gt;</span></div>
+                          </div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">LogBookEntryItem</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">LogBookEntryList</span><span class="m">&gt;</span></div>
+                  </div>
+                </div>
+                <div class="e">
+                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">GraphicsList</span><span class="m">&gt;</span></div>
+                  <div>
+                    <div class="e">
+                      <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">GraphicItem</span> 
+    <span class="at">ID</span><span class="m">="</span><span class="av">RT-LabsStackImage</span><span class="m">"</span>
+   
+    <span class="at">GraphicFile</span><span class="m">="</span><span class="av">GSDML-RT-LABS-STACK</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                    </div>
+                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">GraphicsList</span><span class="m">&gt;</span></div>
+                  </div>
+                </div>
+                <div class="e">
+                  <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">ExternalTextList</span><span class="m">&gt;</span></div>
+                  <div>
+                    <div class="e">
+                      <div class="c" STYLE="margin-left:1em;text-indent:-2em"><A href="#" onclick="return false" onfocus="h()" class="b"></A><span class="m">&lt;</span><span class="t">PrimaryLanguage</span><span class="m">&gt;</span></div>
+                      <div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INFO_Device</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">https://github.com/rtlabs-com/p-net</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_DAP1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">P-Net multi-module sample app</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INFO_DAP1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Profinet device sample app https://github.com/rtlabs-com/p-net</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_CUSTOM_DIAG_1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Custom diagnosis in USI format</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_CUSTOM_DIAG_1_VALUE</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Custom diagnosis value</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_CUSTOM_LOGBOOK_1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Custom Logbook entry</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_NAME_IS</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">X1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_NAME_PS1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">X1 P1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_NAME_PS2</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">X1 P2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>module name</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">DI 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_O8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">DO 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_I8O8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">DIO 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Name_Module_Echo</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Echo Module</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_INPUT1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input 20 Byte(s)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_NAME_OUTPUT1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output 20 Byte(s)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>module info </pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Digital In 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_O8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Digital Out 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_I8O8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Digital In+Out 8xLogicLevel</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_InfoText_Module_Echo</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Echo with adjustable gain</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_INPUT1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input 20 Byte(s)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_MODULE_INFO_OUTPUT1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output 20 Byte(s)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>dataitem name</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input 8 bits</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_8</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output 8 bits</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit0</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit2</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit3</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit4</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit5</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit6</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Bit7</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input Bit 7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit0</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 0</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit2</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit3</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 3</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit4</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 4</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit5</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 5</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit6</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 6</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Bit7</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output Bit 7</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Echo_Float32</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input float to controller (output from controller multiplied by gain)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Input_DataItem_Echo_Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input int to controller (output from controller multiplied by gain)</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Echo_Float32</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output float from controller</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Output_DataItem_Echo_Unsigned32</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output int from controller</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_INPUT</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Input</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">IDT_OUTPUT</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Output</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="k"><span><span class="m">&lt;!--</span></span><span id="clean" class="ci"><pre>ParameterRecordDataItem name</pre></span><span class="b">&nbsp;</span><span class="m">--&gt;</span></div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Parameter 1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_2</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Parameter 2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_sample_parameter_Echo</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Gain for echo module</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Demo_1</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Demo 1</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Demo_2</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Demo 2</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div class="e">
+                          <div STYLE="margin-left:1em;text-indent:-2em"><span class="b">&nbsp;</span><span class="m">&lt;</span><span class="t">Text</span> 
+    <span class="at">TextId</span><span class="m">="</span><span class="av">TOK_Echo_Gain</span><span class="m">"</span>
+   
+    <span class="at">Value</span><span class="m">="</span><span class="av">Gain</span><span class="m">"</span>
+  <span class="m">/&gt;</span></div>
+                        </div>
+                        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">PrimaryLanguage</span><span class="m">&gt;</span></div>
+                      </div>
+                    </div>
+                    <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ExternalTextList</span><span class="m">&gt;</span></div>
+                  </div>
+                </div>
+                <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ApplicationProcess</span><span class="m">&gt;</span></div>
+              </div>
+            </div>
+            <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ProfileBody</span><span class="m">&gt;</span></div>
+          </div>
+        </div>
+        <div><span class="b">&nbsp;</span><span class="m">&lt;/</span><span class="t">ISO15745Profile</span><span class="m">&gt;</span></div>
+      </div>
+    </div>
+  </BODY>
+</HTML>

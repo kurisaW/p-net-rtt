@@ -481,6 +481,7 @@ static int pf_cpm_driver_sw_get_data_and_iops (
    else
    {
       *p_new_flag = false;
+
       LOG_DEBUG (
          PF_CPM_LOG,
          "CPM_DRV_SW(%d): No data received in get data\n",
