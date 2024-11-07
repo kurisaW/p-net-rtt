@@ -26,8 +26,11 @@
 
 #include <string.h>
 
+#if !defined(APP_DEFAULT_ETHERNET_INTERFACE) || (APP_DEFAULT_FILE_DIRECTORY)
 #define APP_DEFAULT_ETHERNET_INTERFACE "e00"
-#define APP_DEFAULT_FILE_DIRECTORY     "/sdcard"
+#define APP_DEFAULT_FILE_DIRECTORY     "/"
+#endif
+
 #define APP_LOG_LEVEL                  APP_LOG_LEVEL_DEBUG
 
 #define APP_BG_WORKER_THREAD_PRIORITY  6
@@ -110,7 +113,19 @@ void pnet_main (void *param)
 
 int pnet_app(void)
 {
-    rt_thread_t pnet_thread = rt_thread_create("pnet", pnet_main, RT_NULL, 51240, 10, 10);
+#if defined(PNET_USING_RAMFS)
+   static char ramfs_buf[8192];
+   if (dfs_mount(RT_NULL, "/", "ram", 0, dfs_ramfs_create(ramfs_buf,8192)) == 0)
+   {
+      rt_kprintf("RAM file system initializated!\n");
+   }
+   else
+   {
+      rt_kprintf("RAM file system initializate failed!\n");
+   }
+#endif
+
+    rt_thread_t pnet_thread = rt_thread_create("pnet", pnet_main, RT_NULL, 5124, 10, 10);
     rt_thread_startup(pnet_thread);
     return 0;
 }

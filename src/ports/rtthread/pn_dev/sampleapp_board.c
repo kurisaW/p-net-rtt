@@ -19,20 +19,17 @@
 
 #include "drv_gpio.h"
 
-#define LED_PIN     rt_pin_get("PI8")
-#define USER_KEY    rt_pin_get("PB11")
-
 /************************* Utilities ******************************************/
 
 void app_set_led (uint16_t id, bool led_state)
 {
    if (id == APP_DATA_LED_ID)
    {
-       rt_pin_write(LED_PIN, led_state ? 1 : 0);
+       rt_pin_write(PNET_LED_PIN, led_state ? 1 : 0);
    }
    else if (id == APP_PROFINET_SIGNAL_LED_ID)
    {
-       rt_pin_write(LED_PIN, led_state ? 1 : 0);
+       rt_pin_write(PNET_LED_PIN, led_state ? 1 : 0);
    }
 }
 
@@ -40,7 +37,7 @@ bool app_get_button (uint16_t id)
 {
     if (id == 0)
     {
-        return rt_pin_read(USER_KEY) == 1;
+        return rt_pin_read(PNET_USER_KEY) == 1;
     }
     else if (id == 1)
     {
