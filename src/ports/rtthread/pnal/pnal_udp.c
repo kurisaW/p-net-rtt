@@ -16,9 +16,17 @@
 #include "pnal.h"
 #include "osal_log.h"
 
-// #include <sys/socket.h>
 #include <lwip/sockets.h>
 #include <string.h>
+
+extern int socket(int domain, int type, int protocol);
+extern int bind(int s, const struct sockaddr *name, socklen_t namelen);
+extern int setsockopt(int s, int level, int optname, const void *optval, socklen_t optlen);
+extern int sendto(int s, const void *dataptr, size_t size, int flags,
+           const struct sockaddr *to, socklen_t tolen);
+extern int recvfrom(int s, void *mem, size_t len, int flags,
+             struct sockaddr *from, socklen_t *fromlen);
+extern int closesocket(int s);
 
 int pnal_udp_open (pnal_ipaddr_t addr, pnal_ipport_t port)
 {
@@ -52,7 +60,7 @@ int pnal_udp_open (pnal_ipaddr_t addr, pnal_ipport_t port)
    return id;
 
 error:
-   close (id);
+   closesocket (id);
    return -1;
 }
 
@@ -71,8 +79,7 @@ int pnal_udp_sendto (
       .sin_addr.s_addr = htonl (dst_addr),
       .sin_port = htons (dst_port),
    };
-   len =
-      sendto (id, data, size, 0, (struct sockaddr *)&remote, sizeof (remote));
+   len = sendto (id, data, size, 0, (struct sockaddr *)&remote, sizeof (remote));
 
    return len;
 }

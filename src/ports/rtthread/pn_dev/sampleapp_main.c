@@ -26,6 +26,11 @@
 
 #include <string.h>
 
+#ifdef RT_USING_DFS
+#include <dfs_fs.h>
+#include "dfs_ramfs.h"
+#endif
+
 #define APP_DEFAULT_FILE_DIRECTORY     "/"
 
 #if !defined(APP_DEFAULT_ETHERNET_INTERFACE)
@@ -115,8 +120,9 @@ void pnet_main (void *param)
 int pnet_app(void)
 {
 #if defined(PNET_USING_RAMFS)
-   static char ramfs_buf[8192];
-   if (dfs_mount(RT_NULL, "/", "ram", 0, dfs_ramfs_create(ramfs_buf,8192)) == 0)
+	rt_align(PNET_RAMFS_SIZE)
+   static char ramfs_buf[PNET_RAMFS_SIZE];
+   if (dfs_mount(RT_NULL, "/", "ram", 0, dfs_ramfs_create(ramfs_buf, PNET_RAMFS_SIZE)) == 0)
    {
       rt_kprintf("RAM file system initializated!\n");
    }

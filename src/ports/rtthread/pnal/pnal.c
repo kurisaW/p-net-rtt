@@ -147,6 +147,14 @@ int pnal_get_interface_index (const char * interface_name)
    return index;
 }
 
+/* 
+* For details about PHY flag bits, please see the ETH driver definition delivered with the bsp,
+* Only examples are provided here.
+*/
+#define PHY_LINK         (1 << 0)
+#define PHY_100M         (1 << 1)
+#define PHY_FULL_DUPLEX  (1 << 2)
+
 /**
  * Calculate MAU type
  *
