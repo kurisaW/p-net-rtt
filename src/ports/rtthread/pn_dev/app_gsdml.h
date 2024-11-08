@@ -39,7 +39,7 @@ extern "C" {
 
 #define APP_GSDML_API 0
 
-#define APP_GSDML_DEFAULT_STATION_NAME "rt-pn"
+#define APP_GSDML_DEFAULT_STATION_NAME "rt-labs-dev"
 
 /* GSDML tag: VendorID */
 #define APP_GSDML_VENDOR_ID 0x0493
