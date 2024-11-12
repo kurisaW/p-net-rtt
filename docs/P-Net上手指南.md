@@ -201,7 +201,7 @@
 
 ### 6.3 PN网络拓扑
 
-> PROFINET 介绍：PRONETA Basic 是一款简易工具，用于快速分析和组态 PROFINET 网络，且可对 ET 200 分布式 IO 系统和其它组件进行简单测试。
+> PRONETA 介绍：PRONETA Basic 是一款简易工具，用于快速分析和组态 PROFINET 网络，且可对 ET 200 分布式 IO 系统和其它组件进行简单测试。
 
 #### 6.3.1 安装GSDML文件
 
