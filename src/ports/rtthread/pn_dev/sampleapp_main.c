@@ -42,7 +42,7 @@
 
 #define APP_LOG_LEVEL                  APP_LOG_LEVEL_DEBUG
 
-#define APP_BG_WORKER_THREAD_PRIORITY  26
+#define APP_BG_WORKER_THREAD_PRIORITY  19
 #define APP_BG_WORKER_THREAD_STACKSIZE 4096 /* bytes */
 
 /********************************** Globals ***********************************/
@@ -57,7 +57,7 @@ static bool app_status = 0;
 
 static void pnet_app(void);
 
-static void netdev_status_callback(struct netdev *netdev, rt_bool_t up)
+static void netdev_status_callback(struct netdev *netdev, enum netdev_cb_type up)
 {
     if (up)
     {
@@ -69,7 +69,7 @@ static void netdev_status_callback(struct netdev *netdev, rt_bool_t up)
     }
 }
 
-void netdev_monitor_init(void *param)
+int netdev_monitor_init(void)
 {
     struct netdev *netdev = netdev_get_by_name("e0");
     if (netdev == RT_NULL)
@@ -78,10 +78,11 @@ void netdev_monitor_init(void *param)
     }
 
     netdev_set_status_callback(netdev, netdev_status_callback);
+    return RT_EOK;
 }
 INIT_APP_EXPORT(netdev_monitor_init);
 
-void pnet_main ()
+static void pnet_main (void *parameter)
 {
    int ret;
    app_utils_netif_namelist_t netif_name_list;
@@ -165,7 +166,7 @@ static void pnet_app(void)
        }
 #endif
 
-        rt_thread_t pnet_thread = rt_thread_create("pnet", pnet_main, RT_NULL, 5124, 25, 10);
+        rt_thread_t pnet_thread = rt_thread_create("pnet", pnet_main, RT_NULL, 5124, 19, 10);
         rt_thread_startup(pnet_thread);
         app_status = 1;
         return;
