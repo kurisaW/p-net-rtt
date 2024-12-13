@@ -1,4 +1,4 @@
-# P-NET
+# P-NET-RTT
 
 > 此存储库是对开源 P-Net 评估版本在 RT-Thread 上的移植，用于 Profinet 设备实现的 P-Net 协议栈。
 
@@ -9,7 +9,8 @@
 * [CODESYS](https://us.store.codesys.com/)（profinet主站模拟）
   * CODESYS
   * CODESYS Gateway（网关设备）
-  * CODESYS Control Win SysTray（PLC设备）
+  * CODESYS Control Win SysTray（软PLC设备）
+* [Npcap](https://npcap.com/dist/npcap-1.80.exe)（该软件是运行CODESYS必须的，需要提前安装好！）
 * [PRONETA](https://support.industry.siemens.com/cs/attachments/67460624/proneta_3_8_0_0.zip)
 
 硬件环境
@@ -40,6 +41,10 @@
 * **Enable pnet sample board config**：p-net app 用户LED及按键配置；
 * **Default root filesystem path for p-net**：p-net 文件系统配置，默认使用 ramfs ，默认分配 8K 内存空间；
 * **P-NET sample slave network ip config**：p-net 从站设备静态IP配置（**请关闭 RT_LWIP_DHCP 功能，使用静态IP**）
+
+下面我们还需要配置禁用dhcp功能并使用静态IP，进入 **→ RT-Thread Components → Network → LwIP: light weight TCP/stack**，选择禁用DHCP；
+
+![image-20241213150409268](figures/image-20241213150409268.png)
 
 完成上述配置后，将程序编译下载至开发板。
 
@@ -88,7 +93,7 @@
 * CODESYS Gateway V3（右键 Start Gateway）
 * CODESYS Control Win V3 -x64 SysTray（右键 Start PLC）
 
-![image-20241108114211620](figures/image-20241108114211620.png)
+![image-20241213150426614](figures/image-20241213150426614.png)
 
 回到 CODESYS 主站软件，双击 Device(CODESYS Control Win V3 x64) -> 通信设置 -> 扫描网络
 
@@ -149,7 +154,7 @@
 ![image-20241111094138076](figures/image-20241111094138076.png)
 
 * PN_Controller 配置：双击左侧导航栏 PN_Controller(PN-Controller) -> 通用，并正确修改默认从站IP参数的区间，根据提示修改即可。
-* P-Net 从站网络配置：双击左侧导航栏 P-Net-multiple-module sample app -> 通用， 修改IP参数为开发板IP
+* P-Net 从站网络配置：双击左侧导航栏 P-Net-multiple-module sample app -> 通用， 修改IP参数为开发板IP。
 
 ![image-20241111095351359](figures/image-20241111095351359.png)
 
