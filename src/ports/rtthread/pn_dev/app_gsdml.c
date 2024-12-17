@@ -59,16 +59,6 @@ static const app_gsdml_module_t module_echo = {
    .name = "Echo module",
    .submodules = {APP_GSDML_SUBMOD_ID_ECHO, 0}};
 
-static const app_gsdml_module_t module_input1 = {
-   .id = APP_GSDML_MOD_ID_INPUT1,
-   .name = "Input 20 Byte(s)",
-   .submodules = {APP_GSDML_SUBMOD_ID_INPUT1, 0}};
-
-static const app_gsdml_module_t module_output1 = {
-   .id = APP_GSDML_MOD_ID_OUTPUT1,
-   .name = "Output 20 Byte(s)",
-   .submodules = {APP_GSDML_SUBMOD_ID_OUTPUT1, 0}};
-
 /******************* Supported submodules ************************/
 
 static const app_gsdml_submodule_t dap_indentity_1 = {
@@ -161,33 +151,13 @@ static const app_gsdml_submodule_t submod_echo = {
    .outsize = APP_GSDML_OUTPUT_DATA_ECHO_SIZE,
    .parameters = {APP_GSDML_PARAMETER_ECHO_IDX, 0}};
 
-static const app_gsdml_submodule_t submod_intput1 = {
-   .id = APP_GSDML_SUBMOD_ID_INPUT1,
-   .name = "Input",
-   .api = APP_GSDML_API,
-   .data_dir = PNET_DIR_INPUT,
-   .insize = APP_GSDML_INTPUT1_DATA_SIZE,
-   .outsize = 0,
-   .parameters = {0}};
-
-static const app_gsdml_submodule_t submod_output1 = {
-   .id = APP_GSDML_SUBMOD_ID_OUTPUT1,
-   .name = "Output",
-   .api = APP_GSDML_API,
-   .data_dir = PNET_DIR_OUTPUT,
-   .insize = 0,
-   .outsize = APP_GSDML_OUTPUT1_DATA_SIZE,
-   .parameters = {0}};
-
 /** List of supported modules */
 static const app_gsdml_module_t * app_gsdml_modules[] = {
    &dap_1,
    &module_digital_in,
    &module_digital_out,
    &module_digital_in_out,
-   &module_echo,
-   &module_input1,
-   &module_output1};
+   &module_echo};
 
 /** List of supported submodules */
 static const app_gsdml_submodule_t * app_gsdml_submodules[] = {
@@ -203,9 +173,6 @@ static const app_gsdml_submodule_t * app_gsdml_submodules[] = {
    &submod_digital_inout,
 
    &submod_echo,
-
-   &submod_intput1,
-   &submod_output1
 };
 
 /* List of supported parameters.

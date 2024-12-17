@@ -65,8 +65,8 @@ typedef struct CC_PACKED app_echo_data
    uint32_t echo_int;
 } app_echo_data_t;
 CC_PACKED_END
-//CC_STATIC_ASSERT (sizeof (app_echo_data_t) == APP_GSDML_INPUT_DATA_ECHO_SIZE);
-//CC_STATIC_ASSERT (sizeof (app_echo_data_t) == APP_GSDML_OUTPUT_DATA_ECHO_SIZE);
+CC_STATIC_ASSERT (sizeof (app_echo_data_t) == APP_GSDML_INPUT_DATA_ECHO_SIZE);
+CC_STATIC_ASSERT (sizeof (app_echo_data_t) == APP_GSDML_OUTPUT_DATA_ECHO_SIZE);
 
 /**
  * Set LED state.
@@ -80,15 +80,6 @@ CC_PACKED_END
 static void app_handle_data_led_state (bool led_state)
 {
    static bool previous_led_state = false;
-   static int count = 0;
-   static bool toggle_led_state = false;
-
-   count++;
-   if (count >= 10){
-      toggle_led_state = !toggle_led_state;
-      app_set_led (APP_PROFINET_SIGNAL_LED_ID, toggle_led_state);
-      count = 0;
-   }
 
    if (led_state != previous_led_state)
    {
@@ -294,7 +285,7 @@ int app_data_read_parameter (
    {
       APP_LOG_WARNING (
          "PLC read request unsupported length. "
-         "Index: %u Length: %u Expected length: %u\n",
+         "Index: %u Max length: %u Data length for our parameter: %u\n",
          (unsigned)index,
          (unsigned)*length,
          par_cfg->length);
