@@ -31,8 +31,8 @@
     -> [*] p-net using ramfs filesystem by default, or you can turn this off and choose another way to enable the filesystem
     -> (8192)  default memory size for ramfs
 -*- P-NET sample slave network ip config  --->
-    -> (192.168.137.196) set static ip address for profinet slaver
-    -> (192.168.137.1) set static gateway address for profinet slaver
+    -> (192.168.10.100) set static ip address for profinet slaver
+    -> (192.168.10.1) set static gateway address for profinet slaver
     -> (255.255.255.0) set static mask address for profinet slaver
     version (latest)  --->
 ```
@@ -52,11 +52,11 @@
 
 我们使用一根网线连接开发板与PC，同时在PC端配置静态IP：
 
-![image-20241108100915339](figures/image-20241108100915339.png)
+![image-20241217145604650](figures/image-20241217145604650.png)
 
 检查开发板端的 IP 信息，并测试联通性：
 
-![image-20241108101125803](figures/image-20241108101125803.png)
+![image-20241217153632234](figures/image-20241217153632234.png)
 
 ## 4.软PLC主站启动
 
@@ -76,7 +76,7 @@
 
 ![image-20241108112525402](figures/image-20241108112525402.png)
 
-弹出下面这个弹窗后保持默认配置点击确定：
+弹出下面这个弹窗后保持默认配置(CODESYS Control Win V3 (CODESYS) / x64 (CODESYS))点击确定：
 
 ![image-20241108113312173](figures/image-20241108113312173.png)
 
@@ -149,16 +149,16 @@
 
 ### 4.6 网络配置
 
-* Ethernet 配置：双击左侧导航栏中的Ethernet(Ethernet) -> 通用，修改网络接口为连接到开发板的以太网端口（这里由于我开启了PRONETA，所以在同一网段下分配了两个主站IP，这里需要注意选择正确的那一个）
+* Ethernet 配置：双击左侧导航栏中的Ethernet(Ethernet) -> 通用，修改网络接口为连接到开发板的以太网端口；
 
-![image-20241111094138076](figures/image-20241111094138076.png)
+![image-20241217150351805](figures/image-20241217150351805.png)
 
 * PN_Controller 配置：双击左侧导航栏 PN_Controller(PN-Controller) -> 通用，并正确修改默认从站IP参数的区间，根据提示修改即可。
 * P-Net 从站网络配置：双击左侧导航栏 P-Net-multiple-module sample app -> 通用， 修改IP参数为开发板IP。
 
-![image-20241111095351359](figures/image-20241111095351359.png)
+![image-20241217150446720](figures/image-20241217150446720.png)
 
-![image-20241111095924136](figures/image-20241111095924136.png)
+![image-20241217151145217](figures/image-20241217151145217.png)
 
 ### 4.7 工程编译并启动调试
 
@@ -172,11 +172,11 @@
 
 ## 5.profinet 从站应用启动
 
-开发板端启动 PN 从站，执行命令：pnet_app：
+开发板端上电后，一旦检测到网卡 link up，则会自动启动 PN 从站：
 
-![image-20241111102801463](figures/image-20241111102801463.png)
+![image-20241217152822018](figures/image-20241217152822018.png)
 
-![image-20241111102909056](figures/image-20241111102909056.png)
+![image-20241217152948577](figures/image-20241217152948577.png)
 
 ## 6.PN协议栈运行demo
 
@@ -204,11 +204,74 @@
 
 我们再次点击 I&M，即可发现 I&M 修改成功！
 
-### 6.3 PN网络拓扑
+### 6.3 PLC编程及PNIO控制
+
+首先我们点击左侧面板的Device->PLC逻辑->Application->PLC_PRG(PRG)，使用ST语言编程，编写变量及程序代码：
+
+* 变量定义：这些变量定义了按钮的输入状态（in_pin_button_LED），LED 的输出状态（out_pin_LED）以及控制 LED 是否闪烁的状态变量（flashing）。振荡器状态（oscillator_state）和振荡器周期计数器（oscillator_cycles）用来实现定时闪烁效果。
+
+```st
+PROGRAM PLC_PRG
+VAR
+    in_pin_button_LED: BOOL;
+    out_pin_LED: BOOL;
+    in_pin_button_LED_previous: BOOL;
+    flashing: BOOL := TRUE;
+    oscillator_state: BOOL := FALSE;
+    oscillator_cycles: UINT := 0;
+END_VAR
+```
+
+* 程序定义：
+  1. 首先在每次循环中，oscillator_cycles 增加 1。当计数器超过 200 时，重置计数器并切换 oscillator_state 的状态（TRUE 或 FALSE），实现周期性变化；
+  1. 如果按钮被按下（in_pin_button_LED 为 TRUE），并且在上一周期按钮状态是 FALSE，则切换 flashing 状态。即每次按钮按下时，切换 LED 是否闪烁的状态。
+  1. 如果 flashing 为 TRUE，则 LED 会根据振荡器状态 (oscillator_state) 闪烁；如果 flashing 为 FALSE，LED 直接关闭。
+  1. 在每次循环结束时，将当前按钮的状态保存在 in_pin_button_LED_previous 中，以便在下次判断按钮按下的事件。
+
+```st
+oscillator_cycles := oscillator_cycles + 1;
+IF oscillator_cycles > 200 THEN 
+    oscillator_cycles := 0;
+    oscillator_state := NOT oscillator_state;
+END_IF
+IF in_pin_button_LED = TRUE THEN 
+    IF in_pin_button_LED_previous = FALSE THEN 
+        flashing := NOT flashing; 
+    END_IF
+    out_pin_LED := TRUE;
+ELSIF flashing = TRUE THEN 
+    out_pin_LED := oscillator_state;
+ELSE 
+    out_pin_LED := FALSE;
+END_IF
+in_pin_button_LED_previous := in_pin_button_LED;
+```
+
+工程中的配置位置如下图所示：
+
+![image-20241217153914641](figures/image-20241217153914641.png)
+
+接下来我们还需要添加一个内置的IO模块，右键点击P_Net_multi_module_sample_app然后添加一个IO模块（DIO 8xLogicLevel），如下图所示：
+
+![image-20241217153935521](figures/image-20241217153935521.png)
+
+接下来双击DIO_8xLogicLevel节点，选择PNIO Module I/O映射，编辑Input Bit 7和Output Bit 7并绑定PLC变量：
+
+![image-20241217153948078](figures/image-20241217153948078.png)
+
+接着我们点击上方导航栏的编译->生成代码，然后选择在线->登录，运行查看现象；
+
+![image-20241217153957334](figures/image-20241217153957334.png)
+
+接下来回到CODESYS，再次双击Device->PLC逻辑->Application下的PLC_PRG(PRG)，此时便可动态观察程序运行状态，例如我们按住etherkit开发板上的KEY0，可以发现in_pin_button_LED及in_pin_button_LED_previous这两个变量值为FALSE，此时再松开KEY0，可以发现flashing值反转一次。
+
+![image-20241217154012897](figures/image-20241217154012897.png)
+
+### 6.4 PN网络拓扑
 
 > PRONETA 介绍：PRONETA Basic 是一款简易工具，用于快速分析和组态 PROFINET 网络，且可对 ET 200 分布式 IO 系统和其它组件进行简单测试。
 
-#### 6.3.1 安装GSDML文件
+#### 6.4.1 安装GSDML文件
 
 我们打开下载的 PRONETA 软件，添加 GSDML文件：
 
@@ -218,13 +281,13 @@
 
 ![image-20241111105406072](figures/image-20241111105406072.png)
 
-#### 6.3.2 选择网络适配器
+#### 6.4.2 选择网络适配器
 
 点击 设置 -> 网络适配器，选择 PN 对应的以太网口：
 
 ![image-20241111105548779](figures/image-20241111105548779.png)
 
-#### 6.3.3 在线组网状态查看
+#### 6.4.3 在线组网状态查看
 
 选择左上角导航栏 网络分析-> 在线，点击刷新，稍等片刻便可看到 PN组网状态，同时在右侧栏可以查看具体的PNIO信息，由于我们刚刚在CODESYS中修改了PNIO的信息，在这里也可以看到更新之后的信息
 
